@@ -1,0 +1,43 @@
+<view class="coupon {{size}} {{!status ? 'disable' : ''}}">
+	<view class="left {{color}}">
+		<view class="left-title">
+			<view class="unit" wx:if="{{type === '1'}}">￥</view>
+			<view class="value {{longText? 'long-text' : ''}}">{{value}}</view>
+			<view class="unit" wx:if="{{type === '2'}}">折</view>
+		</view>
+		<view wx:if="{{subTitle !== ''}}" class="sub-title">{{subTitle}}</view>
+	</view>
+	<view class="right">
+		<view class="right-main">
+			<view class="right-title">
+				<view wx:if="{{label !== ''}}" class="label {{color}}">{{label}}</view>
+				<view class="title-content">{{title}}</view>
+			</view>
+			<view class="detail">
+				<view class="expire-date">有效期 {{startDate ? startDate + ' 至 ' : ''}}{{expireDate}}</view>
+				<view wx:if="{{showRules}}" class="rule-switch-btn" bindtap="arrowClicked">
+					<text>使用规则</text>
+					<text class="iconfont {{openRules ? 'icon-shangjiantou' : 'icon-xiajiantou'}}" style="font-size: 20rpx; color: #777; margin-left: 14rpx"/>
+				</view>
+			</view>	
+		</view>
+		<view class="right-fill"></view>
+		<view wx:if="{{ableChecked}}" class="right-checkbox">
+			<view bindtap="clickCheckbox" class="{{checked ? 'checked' : 'unchecked' }} {{color}}" ></view>
+		</view>
+		<view wx:if="{{useBtn}}" bindtap="clickUseBtn" class="right-btn {{color}}">
+			<text>立</text>
+			<text>即</text>
+			<text>使</text>
+			<text>用</text>
+		</view>
+		<view class="state-sign {{signType}}" wx:if="{{signType !== ''}}"/>
+	</view>
+	
+</view>
+<view class="rule-contents" wx:if="{{openRules}}">
+	<view>使用规则：</view>
+	<text>{{rules}}</text>
+</view> 
+
+

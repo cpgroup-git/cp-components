@@ -1,0 +1,60 @@
+<view>
+  <view class="product-item {{small?'small': ''}}">
+    <view class="pic skeleton-rect {{small ? 'small' : ''}}">
+      <image-loader url="{{imgUrl}}" width="{{small?'200':'304'}}" height="{{small?'200':'304'}}" mode="aspectFit"></image-loader>
+      <view class="descent-label" wx:if="{{diffPrice>0 && isReductionSale}}">直降￥{{diffPrice}}</view>
+    </view>
+    <view class="info">
+      <view class="title skeleton-rect {{small?'small':''}}">{{title}}</view>
+      <view class="mark" wx:if="{{!small}}">
+        <view wx:if="{{activity.length && showPrice}}" class="activity">{{activity}}</view>
+        <view wx:if="{{stockState === 0 && isSalesman}}" class="stock-full">库存充足</view>
+        <view wx:if="{{stockState === 1 && isSalesman}}" class="stock-shortage">库存紧张</view>
+      </view>
+      <block wx:if="{{!small}}">
+        <view class="price skeleton-rect" wx:if="{{!small && showPrice}}">
+          <view class="current-price-container">
+            <text class="current-unit">￥</text>
+            <text class="current-price">{{currentPrice}}</text>
+            <text class="attr-unit">{{originPrice > 0 ? '' : unit}}</text>
+          </view>
+          <view class="original-price-container" wx:if="{{originPrice>0}}">
+            <text class="original-price">￥{{originPrice}}</text>
+            <text class="attr-unit">{{unit}}</text>
+          </view>
+        </view>
+        <view class="price" wx:if="{{!small && !showPrice && originPrice>0}}">
+          <view class="current-price-container">
+            <text class="current-unit">￥</text>
+            <text class="current-price">{{originPrice}}</text>
+            <text class="attr-unit">{{unit}}</text>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{small}}">
+        <view class="price-small skeleton-rect" wx:if="{{small && showPrice}}">
+          <view class="current-price" style="margin-bottom:{{originPrice<=0?'10rpx':'0rpx'}}">
+            <text>￥{{currentPrice}}</text>
+            <text class="attr-unit">{{originPrice > 0 ? '' : unit}}</text>
+          </view>
+          <view class="original-price" wx:if="{{originPrice>0}}">
+            <text>￥{{originPrice}}</text>
+            <text class="attr-unit">{{unit}}</text>
+          </view>
+        </view>
+        <view class="price-small" wx:if="{{small && !showPrice && originPrice>0}}">
+          <view class="current-price" style="margin-bottom:10rpx">
+            <text>￥{{originPrice}}</text>
+            <text class="attr-unit">{{unit}}</text>
+          </view>
+        </view>
+      </block>
+      <view class="add skeleton-radius" catchtap="add">
+        <view class="add-icon {{(quantity>=max)||(quantity>=99999) ? 'unactive': ''}}"></view>
+        <view class="red-dot {{quantity > 9 ? 'oval' : '' }}" wx:if="{{quantity>0}}">
+          {{quantity > 999 ? '···' : quantity}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

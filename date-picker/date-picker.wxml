@@ -1,0 +1,28 @@
+<date-picker>
+  <view class="mask" catchtouchmove="catchTouchMove">
+    <view class="mask-content">
+      <view class="part1">
+        <view class="cancel" bindtap="cancel">取消</view>
+        <view class="confirm" bindtap="confirm">确定</view>
+      </view>
+      <view class="part2">
+        <view class="start {{tempStart === '开始时间' || !isStartDate ? '' : 'active'}}" bindtap="startDateSelected">{{tempStart}}</view>
+        <view class="zhi">至</view>
+        <view class="end {{tempEnd === '结束时间' || isStartDate ? '' : 'active'}}" bindtap="endDateSelected">{{tempEnd}}</view>
+      </view>
+      <view class="part3">
+        <picker-view value="{{value}}" class="picker-view" indicator-style="height: 82rpx; line-height: 82rpx;" bindchange="bindValueChanged">
+          <picker-view-column>
+            <view class="column" wx:for="{{years}}" wx:key="index">{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view class="column" wx:for="{{months}}" wx:key="index">{{item}}月</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view class="column" wx:for="{{days}}" wx:key="index">{{item}}日</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+  </view>
+</date-picker>

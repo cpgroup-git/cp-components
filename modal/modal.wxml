@@ -1,0 +1,7 @@
+<view class="modal"  wx:if="{{!hidden}}">
+	<viewm catchtouchmove="catchTouchMove" bindtransitionend="transitionend" class="modal-bg {{fade ? 'fade' : ''}}"/>
+	<view  catchtouchmove="catchTouchMove" class="modal-content {{fade ? 'fade' : ''}}">
+		<slot/>
+	</view>
+</view>
+

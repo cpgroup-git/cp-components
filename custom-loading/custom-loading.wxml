@@ -1,0 +1,8 @@
+<view>
+  <view class="bg">
+    <view class="content">
+      <cover-image class="img" src="/images/loading.gif"></cover-image>
+      <view class="text">努力加载中...</view>
+    </view>
+  </view>
+</view>

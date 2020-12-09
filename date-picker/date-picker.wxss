@@ -1,0 +1,82 @@
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  z-index: 1000;
+}
+.mask .mask-content {
+  position: absolute;
+  height: 626rpx;
+  width: 100%;
+  bottom: 0rpx;
+  background-color: #fff;
+}
+.mask .mask-content .part1 {
+  height: 96rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.mask .mask-content .part1 .cancel {
+  font-size: 34rpx;
+  color: #919191;
+  margin-left: 32rpx;
+}
+.mask .mask-content .part1 .confirm {
+  font-size: 36rpx;
+  color: #333;
+  margin-right: 32rpx;
+}
+.mask .mask-content .part2 {
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.mask .mask-content .part2 .start {
+  width: 240rpx;
+  font-size: 30rpx;
+  color: #999;
+  border-bottom: 0.5px solid #E0E0E0;
+  line-height: 92rpx;
+  margin-right: 32rpx;
+  text-align: center;
+}
+.mask .mask-content .part2 .zhi {
+  font-size: 30rpx;
+  color: #777;
+  line-height: 92rpx;
+}
+.mask .mask-content .part2 .end {
+  width: 240rpx;
+  font-size: 30rpx;
+  color: #999;
+  border-bottom: 0.5px solid #E0E0E0;
+  line-height: 92rpx;
+  margin-left: 32rpx;
+  text-align: center;
+}
+.mask .mask-content .part2 .active {
+  color: #FF8727;
+  border-bottom: 0.5px solid #FF8727;
+}
+.mask .mask-content .part3 {
+  height: 390rpx;
+  width: 100%;
+}
+.mask .mask-content .part3 .picker-view {
+  width: 100%;
+  height: 390rpx;
+  text-align: center;
+}
+.mask .mask-content .part3 .picker-view .column {
+  height: 82rpx;
+  line-height: 82rpx;
+  font-size: 30rpx;
+}

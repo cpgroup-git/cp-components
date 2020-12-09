@@ -1,0 +1,3 @@
+<view>
+  <image src="{{imageUrl}}" style="width: {{width === 0 ? '100%' : width + 'rpx'}}; height: {{height}}rpx;" mode="{{mode}}"/>
+</view>

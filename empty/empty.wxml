@@ -1,0 +1,12 @@
+<view>
+  <view class="empty-bg" catchtouchmove="catchTouchMove" style="background-color: {{bgColor}}">
+    <view class="empty-content">
+      <image class="empty-img" wx:if="{{currentStatus.iconUrl}}" src="{{currentStatus.iconUrl}}" mode="aspectFit" lazy-load="true" />
+      <view class="empty-text" style="color: {{color}}">
+        <view class="empty-text-title">{{currentStatus.title}}</view>
+        <view class="empty-text-desc" wx:if="{{currentStatus.desc.length}}">{{currentStatus.desc}}</view>
+      </view>
+      <view wx:if="{{currentStatus.btn}}" class="empty-btn" style="color: {{themeColor}}; border-color:{{themeColor}}"  bindtap="btnClicked">{{currentStatus.btn}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<view class="modal-wrapper">
+  <view class="model-coupon" wx:if="{{type==='coupon'}}">
+    <view class="modal-coupon-header">
+      <view class="modal-close-btn" bindtap="closeModal"></view>
+      <view class="modal-title">
+        <text class="modal-title-text" space="nbsp">您被红包 </text>
+        <text class="modal-title-text strong">砸中了!</text>
+      </view>
+    </view>
+    <scroll-view class="modal-coupon-content" scroll-y="{{true}}" scroll-with-animation="true" enable-flex="true">
+      <block wx:for="{{data}}" wx:key="index">
+        <coupon expireDate="{{item.expireDate}}" size="small" value="{{item.value}}" label="{{item.label}}" subTitle="{{item.subTitle}}" title="{{item.title}}"></coupon>
+        <view wx:if="{{data.length !== index -1}}" style="height: 20rpx"></view>
+      </block>
+    </scroll-view>
+    <view class="modal-coupon-footer">
+      <button class="modal-sumbit-btn" bindtap="submitModal">领取优惠券</button>
+    </view>
+  </view>
+  <view class="model-image" wx:if="{{type==='image'}}">
+    <image class="model-image-content" src="{{data.img}}" mode="aspectFill" lazy-load="{{true}}" bindtap="clickImage"/>
+  </view>
+  <view class="model-text" wx:if="{{type==='text'}}">
+    <view class="model-text-content">
+      <view class="title">
+        <view class="main-title">{{data.title}}</view>
+      </view>
+      <view class="info">
+        <block wx:for="{{contentArray}}" wx:key="index">
+          <view class="info-content">{{item}}</view>
+        </block>
+      </view>
+      <view class="line"></view>
+      <view class="buttons">
+        <view wx:if="{{data.showCancel}}" class="cancel" bindtap="cancel">{{data.cancelText}}</view>
+        <view class="confirm {{textColor}}" style="width: {{data.showCancel ? '50%' : '100%'}}" bindtap="confirm">{{data.confirmText}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<swipe-delete>
+  <view class="swipe-item">
+    <block wx:for="{{actions}}" wx:key="index">
+      <view class="action-{{index+1}}" data-name="{{item.name}}" catchtap="onActionTap" style="right: {{index*120}}rpx; z-index: {{showState===1 ? 1 : -1}}">
+        <view class="text">{{item.name}}</view>
+      </view>
+    </block>
+    <view class="swipe-content" animation="{{animation}}" bindtouchstart="ontouchstart" bindtouchmove="ontouchmove" bindtouchend="ontouchend">
+      <slot></slot>
+    </view>
+  </view>
+</swipe-delete>

@@ -1,0 +1,266 @@
+@import '/font/iconfont.wxss';
+.coupon {
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  border-radius: 10rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.coupon.small {
+  height: 160rpx;
+}
+.coupon .left {
+  width: 180rpx;
+  flex-shrink: 0;
+  padding-top: 22rpx;
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/coupon-left-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.coupon .left.yellow {
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/coupon-left-bg-yellow.png');
+  color: #333;
+}
+.coupon.disable .left{
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/coupon-left-disable-bg.png');
+  color: #fff;
+}
+.coupon .left-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.coupon .left .unit {
+  height: 80rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 80rpx;
+  letter-spacing: 2rpx;
+}
+.coupon .left .value {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 72rpx;
+  font-family: Arial-BoldMT, Arial;
+  font-weight: normal;
+}
+.coupon .left .value.long-text {
+  font-size: 48rpx;
+}
+.coupon .left .sub-title {
+  height: 30rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+.coupon.small .left {
+  width: 144rpx;
+}
+.coupon.small .left .unit {
+  height: 64rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 64rpx;
+  letter-spacing: 1rpx;
+}
+.coupon.small .left .value {
+  height: 80rpx;
+  font-size: 58rpx;
+  font-family: Arial-BoldMT, Arial;
+  line-height: 80rpx;
+}
+.coupon.small .left .value.long-text {
+  font-size: 40rpx;
+}
+.coupon.small .left .sub-title {
+  height: 25rpx;
+  line-height: 25rpx;
+  font-size: 18rpx;
+  margin-top: 12rpx;
+  margin-bottom: 6rpx;
+}
+.right {
+  flex-grow: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.right-main {
+  position: relative;
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/coupon-right-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 32rpx;
+  flex-shrink: 0;
+}
+.right-fill {
+  background: #fff;
+  flex-grow: 1;
+}
+.right-title {
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.right-title .label {
+  height: 36rpx;
+  background: #fe4339;
+  color: #fff;
+  border-radius: 18rpx;
+  padding: 0 12rpx;
+  margin-right: 12rpx;
+  font-size: 20rpx;
+  line-height: 36rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+}
+.right-title .label.yellow {
+  background-color: #fff;
+  color: #FF5900;
+  border: 1px solid #FFBB00;
+}
+.coupon.disable .right-title .label {
+  background-color: #C8C8C8;
+}
+.coupon.disable .right-title .label.yellow {
+  background-color: #fff;
+  color: #777;
+  border: 1px solid #999;
+}
+.right-title .title-content {
+  height: 36rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 36rpx;
+}
+.coupon.small .right-main {
+  padding-left: 20rpx;
+}
+.coupon.small .right-title {
+  margin-top: 28rpx;
+}
+.coupon.small .right-title .label {
+  height: 30rpx;
+  margin-right: 6rpx;
+  border-radius: 14rpx;
+  padding: 0 12rpx;
+  font-size: 16rpx;
+  line-height: 30rpx;
+  font-weight: 500;
+}
+.coupon.small .right-title .title-content {
+  height: 30rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+}
+.right .detail {
+  margin-bottom: 24rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #777777;
+}
+.right .detail .expire-date {
+  line-height: 28rpx;
+  margin-right: 16rpx;
+}
+.right .detail .rule-switch-btn {
+  margin-top: 16rpx;
+  line-height: 28rpx;
+}
+.coupon.small .right .detail {
+  margin-bottom: 32rpx;
+  font-size: 16rpx;
+}
+.coupon.small .right .detail .expire-date {
+  line-height: 22rpx;
+}
+
+.state-sign {
+  position: absolute;
+  width: 112rpx;
+  height: 96rpx;
+  right: 0;
+  top: 0;
+}
+.state-sign.used {
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/coupon-used-sign.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.state-sign.expire {
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/coupon-expire-sign.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rule-contents {
+  margin-top: -14rpx;
+  padding: 46rpx 22rpx 32rpx 32rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  background: #FAFAFA;
+  color: #777777;
+  line-height: 33rpx;
+}
+.right-btn {
+  border-left: 1rpx#D4D2D2 dashed;
+  color: #FE3939;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  line-height:36rpx;
+  width: 84rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+}
+.right-btn.yellow {
+  color: #FF5900;
+}
+.right-checkbox{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-checkbox .checked{
+  height: 44rpx;
+  width: 44rpx;
+  margin-right: 20rpx;
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/icon-selected.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.right-checkbox .checked.yellow {
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/icon-selected-yellow.png');
+}
+.right-checkbox .unchecked{
+  height: 44rpx;
+  width: 44rpx;
+  margin-right: 20rpx;
+  background-image: url('https://fe-ifarm.cpgroupcloud.com/static_resource/group/icon-unselected.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
