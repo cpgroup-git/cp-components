@@ -23,35 +23,27 @@ Component({
       this.setData(
         {
           hidden: false,
-          fade: true,
+          fade: true
         },
         () => {
           this.setData({
-            fade: false,
+            fade: false
           });
         }
       );
     },
     _fadeOut: function () {
       this.setData({
-        fade: true,
+        fade: true
       });
     },
     transitionend: function () {
-      console.log('this.data.visible:',this.data.visible)
-      if (this.data.visible) {
-        this.setData({
-          hidden: false,
-          fade: false,
-        });
-      } else {
-        this.setData({
-          hidden: true,
-          fade: false,
-        });
-      }
+      this.setData({
+        hidden: this.data.visible ? false : true,
+        fade: false
+      })
     },
-     // 禁止蒙层穿透
+    // 禁止蒙层穿透
     catchTouchMove() {
       return;
     },

@@ -11,10 +11,23 @@ Component({
     content: {
       type: String,
       value: ''
+    },
+    maxLength: {
+      type: Number,
+      value: 5
     }
   },
   data: {
-
+    max: 0
+  },
+  attached() {
+    let str = '';
+    for(let i = 0; i < this.properties.maxLength; i++) {
+      str += '9';
+    }
+    this.setData({
+      max: parseInt(str)
+    })
   },
   methods: {
     catchTouchMove() { 
@@ -24,10 +37,9 @@ Component({
 
     inputValueChanged(e) {
       let value = e.detail.value;
-      if (this.properties.type === 'number') {
-        if (value.length > 5) {
-          value = 99999;
-        }
+      const { type, maxLength } = this.properties;
+      if (type === 'number') {
+        value = value.length > maxLength ? this.data.max : value;
         this.setData({
           count: value
         })
@@ -39,7 +51,8 @@ Component({
     },
 
     hide() {
-      let value = this.properties.type === 'number' ? this.properties.count : this.properties.content;
+      const { type, count, content } = this.properties;
+      let value = type === 'number' ? count : content;
       this.triggerEvent('hideCountInput', value);
     },
 

@@ -44,8 +44,9 @@ Component({
   },
 
   attached() {
-    if (this.properties.type === 'text' && this.properties.data.content) {
-      let array = this.properties.data.content.split('\n');
+    const { type, data: { content } } = this.properties;
+    if (type === 'text' && content) {
+      let array = content.split('\n');
       this.setData({
         contentArray: array
       })

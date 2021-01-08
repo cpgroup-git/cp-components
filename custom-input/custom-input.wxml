@@ -1,7 +1,7 @@
 <custom-input>
   <view class="bg" catchtouchmove="catchTouchMove" catchtap="hide">
     <view class="content">
-      <input class="input" type="{{type}}" focus="true" maxlength="{{type==='number' ? (count>=99999 ? 5 : 6) : 50}}"  value="{{type==='number' ? (count>0 ? count : '') : content}}" bindinput="inputValueChanged" />
+      <input class="input" type="{{type}}" focus="true" maxlength="{{type==='number' ? (count>=max ? maxLength : maxLength+1) : 50}}"  value="{{type==='number' ? (count>0 ? count : '') : content}}" bindinput="inputValueChanged" />
       <view class="confirm" bindtap="confirm">确定</view>
     </view>
   </view>

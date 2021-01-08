@@ -44,8 +44,5 @@ Component({
         })
       });
     }
-  },
-  attached: function(){
-    // this.addTask();
   }
 });
